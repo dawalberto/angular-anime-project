@@ -1,1 +1,14 @@
-<p>animes works!</p>
+<mat-form-field>
+  <input matInput value="Dragon Ball">
+</mat-form-field>
+
+<mat-grid-list cols="2">
+  <mat-grid-tile *ngFor="let anime of animes">
+
+      <mat-card class="example-card" routerLink="/anime-detail">
+        <img mat-card-image [src]="anime.image_url" alt="Photo">
+        <mat-card-title>{{anime.title | slice:0:21}}...</mat-card-title>
+      </mat-card>
+
+  </mat-grid-tile>
+</mat-grid-list>
