@@ -1,1 +1,33 @@
-<p>anime-detail works!</p>
+<div *ngIf="anime">
+
+  <h1>{{anime.title}}</h1>
+  <img [src]="anime.image_url" alt="">
+
+  <!-- <iframe width="560" height="315" [src]="anime.trailer_url" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+
+  <p><b>Episodios:</b> {{anime.episodes}}</p>
+  <p><b>Estado:</b> {{anime.status}}</p>
+  <p><b>Duración:</b> {{anime.duration}}</p>
+  <p><b>Clasificación:</b> {{anime.rating}}</p>
+  <p><b>Puntuación:</b> {{anime.score}}</p>
+  <p><b>Rank:</b> {{anime.rank}}</p>
+  <p><b>Popularidad:</b> {{anime.popularity}}</p>
+  <p><b>Sinopsis:</b> {{anime.synopsis}}</p>
+  <p><b>Estrenado:</b> {{anime.premiered}}</p>
+  <p><b>Emisión:</b> {{anime.broadcast}}</p>
+  <p *ngIf="anime.producers.length"><b>Productores:</b> {{anime.producers[0].name}}</p>
+  <p *ngIf="anime.licensors.length"><b>Licenciantes:</b> {{anime.licensors[0].name}}</p>
+  <p *ngIf="anime.studios.length"><b>Estudio:</b> {{anime.studios[0].name}}</p>
+  <div *ngIf="anime.genres.length">
+    <p>
+      <b>Generos: </b>
+      <span *ngFor="let genero of anime.genres">
+        {{genero.name}},
+      </span>
+    </p>
+  </div>
+  <p *ngIf="anime.opening_themes.length"><b>Tema Opening:</b> {{anime.opening_themes[0]}}</p>
+  <p *ngIf="anime.ending_themes.length"><b>Tema Ending:</b> {{anime.ending_themes[0]}}</p>
+  <a [href]="anime.trailer_url" target="_blank">Trailer</a>
+
+</div>

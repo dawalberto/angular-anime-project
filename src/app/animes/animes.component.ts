@@ -14,17 +14,16 @@ export class AnimesComponent implements OnInit {
   constructor(private animesService:AnimesService) { }
 
   ngOnInit() {
-    this.getAnimesByName(this.name)
+    this.getAnimesByName()
   }
 
-  name:string = 'dragon%20ball'
+  name:string = 'Dragon ball'
   animes:Anime[] = []
 
-  getAnimesByName(name:string): void {
-    this.animesService.getAnimesByName(name)
+  getAnimesByName(): void {
+    this.animesService.getAnimesByName(this.name)
       .subscribe(animes => {
         this.animes = animes
-        console.log(animes)
       })
   }
 

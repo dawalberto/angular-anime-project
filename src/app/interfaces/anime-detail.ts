@@ -1,0 +1,40 @@
+export interface AnimeDetail {
+
+  request_hash:string;
+  request_cached:boolean;
+  request_cache_expiry:number;
+  mal_id:number
+  url:string;
+  image_url:string;
+  trailer_url:string;
+  title:string;
+  title_english:string;
+  title_japanese:string;
+  title_synonyms:Array<any>;
+  type:string;
+  source:string;
+  episodes:number;
+  status:string;
+  airing:boolean;
+  aired:Object;
+  duration:string;
+  rating:string;
+  score:number;
+  scored_by:number;
+  rank:number;
+  popularity:number;
+  members:number;
+  favorites:number;
+  synopsis:string;
+  background:any;
+  premiered:string;
+  broadcast:string;
+  related:Object;
+  producers:Array<any>;
+  licensors:Array<any>;
+  studios:Array<any>;
+  genres:Array<any>;
+  opening_themes:Array<any>;
+  ending_themes:Array<any>;
+
+}
