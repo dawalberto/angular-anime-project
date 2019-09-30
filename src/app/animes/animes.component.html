@@ -3,13 +3,11 @@
 </mat-form-field>
 <button mat-raised-button (click)="getAnimesByName()" color="primary">Search</button>
 
-<mat-grid-list cols="2" *ngIf="animes.length">
-  <mat-grid-tile *ngFor="let anime of animes">
-
-      <mat-card class="example-card" routerLink="/anime-detail/{{anime.mal_id}}">
-        <img mat-card-image [src]="anime.image_url" alt="Photo">
-        <mat-card-title>{{anime.title | slice:0:21}}...</mat-card-title>
-      </mat-card>
-
-  </mat-grid-tile>
-</mat-grid-list>
+<div class="container" *ngIf="animes.length">
+  <div *ngFor="let anime of animes">
+    <mat-card class="example-card" routerLink="/anime-detail/{{anime.mal_id}}">
+      <img mat-card-image [src]="anime.image_url" alt="Photo">
+      <mat-card-title>{{anime.title | slice:0:21}}...</mat-card-title>
+    </mat-card>
+  </div>
+</div>
