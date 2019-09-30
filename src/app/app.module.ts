@@ -14,12 +14,14 @@ registerLocaleData(es);
 
 import { AnimesComponent } from './animes/animes.component';
 import { AnimeDetailComponent } from './anime-detail/anime-detail.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AnimesComponent,
-    AnimeDetailComponent
+    AnimeDetailComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
