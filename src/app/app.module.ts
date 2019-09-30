@@ -7,11 +7,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
-import {MatGridListModule} from '@angular/material/grid-list';
-import {MatButtonModule} from '@angular/material/button';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatInputModule} from '@angular/material/input';
-import {MatCardModule} from '@angular/material/card';
+import { NgZorroAntdModule, NZ_I18N, es_ES } from 'ng-zorro-antd';
+import { registerLocaleData } from '@angular/common';
+import es from '@angular/common/locales/es';
+registerLocaleData(es);
 
 import { AnimesComponent } from './animes/animes.component';
 import { AnimeDetailComponent } from './anime-detail/anime-detail.component';
@@ -26,15 +25,11 @@ import { AnimeDetailComponent } from './anime-detail/anime-detail.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatGridListModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatInputModule,
     HttpClientModule,
-    MatCardModule,
-    FormsModule
+    FormsModule,
+    NgZorroAntdModule
   ],
-  providers: [],
+  providers: [{ provide: NZ_I18N, useValue: es_ES }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

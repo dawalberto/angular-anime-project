@@ -1,13 +1,19 @@
-<mat-form-field>
-  <input matInput value="Dragon Ball" [(ngModel)]="name">
-</mat-form-field>
-<button mat-raised-button (click)="getAnimesByName()" color="primary">Search</button>
+<nz-input-group nzSearch nzSize="large" [nzAddOnAfter]="suffixButton">
+  <input [(ngModel)]="name" type="text" nz-input placeholder="Dragon Ball" />
+</nz-input-group>
+<ng-template #suffixButton>
+  <button (click)="getAnimesByName()" nz-button nzType="primary" nzSize="large" nzSearch>Search</button>
+</ng-template>
 
 <div class="container" *ngIf="animes.length">
   <div *ngFor="let anime of animes">
-    <mat-card class="example-card" routerLink="/anime-detail/{{anime.mal_id}}">
-      <img mat-card-image [src]="anime.image_url" alt="Photo">
-      <mat-card-title>{{anime.title | slice:0:21}}...</mat-card-title>
-    </mat-card>
+
+    <nz-card nzHoverable [title]="anime.title" routerLink="/anime-detail/{{anime.mal_id}}" [nzCover]="coverTemplate">
+      <nz-card-meta [nzTitle]="anime.title"></nz-card-meta>
+    </nz-card>
+    <ng-template #coverTemplate>
+      <img alt="image anime" [src]="anime.image_url" />
+    </ng-template>
+
   </div>
 </div>

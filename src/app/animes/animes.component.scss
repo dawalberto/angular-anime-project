@@ -1,11 +1,10 @@
-mat-card {
-  cursor: pointer;
-}
-
 .container {
   display: grid;
   grid-template-columns: 100%;
   gap: 1rem;
+  margin-top: 1rem;
+  align-content: space-around;
+  justify-content: space-between;
 }
 
 @media (min-width: 960px) {
