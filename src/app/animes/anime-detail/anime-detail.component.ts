@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AnimesService } from '../animes.service';
 import { ActivatedRoute } from '@angular/router';
-import { AnimeDetail } from '../interfaces/anime-detail';
+import { AnimesService } from '../../animes.service';
+import { AnimeDetail } from '../../interfaces/anime-detail';
 
 @Component({
   selector: 'app-anime-detail',

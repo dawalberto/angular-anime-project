@@ -9,7 +9,6 @@ import { FormsModule } from '@angular/forms';
 
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { animeReducer } from './anime.reducer';
 import { environment } from 'src/environments/environment';
 
 import { NgZorroAntdModule, NZ_I18N, es_ES } from 'ng-zorro-antd';
@@ -17,9 +16,10 @@ import { registerLocaleData } from '@angular/common';
 import es from '@angular/common/locales/es';
 registerLocaleData(es);
 
-import { AnimesComponent } from './animes/animes.component';
-import { AnimeDetailComponent } from './anime-detail/anime-detail.component';
+import { AnimesComponent } from './animes/anime-list/animes.component';
+import { AnimeDetailComponent } from './animes/anime-detail/anime-detail.component';
 import { HomeComponent } from './home/home.component';
+import { animeReducer } from './animes/animes.reducer';
 
 @NgModule({
   declarations: [
@@ -44,4 +44,5 @@ import { HomeComponent } from './home/home.component';
   providers: [{ provide: NZ_I18N, useValue: es_ES }],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
