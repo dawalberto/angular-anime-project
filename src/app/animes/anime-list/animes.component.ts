@@ -17,7 +17,6 @@ export class AnimesComponent implements OnInit {
 
   ngOnInit() {
     this.store.select('animes').subscribe(anime => {
-      console.log(anime)
       this.animes = anime
     })
   }
