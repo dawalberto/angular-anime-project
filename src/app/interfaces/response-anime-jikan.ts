@@ -1,6 +1,6 @@
 import { Anime } from './anime';
 
-export interface ResponseJikan {
+export interface ResponseAnimeJikan {
 
   last_page:number;
   request_cache_expiry:number;

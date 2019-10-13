@@ -4,6 +4,7 @@ import { AnimesComponent } from './animes/anime-list/animes.component';
 import { AnimeDetailComponent } from './animes//anime-detail/anime-detail.component';
 import { HomeComponent } from './home/home.component';
 import { MangaListComponent } from './mangas/manga-list/manga-list.component';
+import { MangaDetailComponent } from './mangas/manga-detail/manga-detail.component';
 
 const routes: Routes = [
 
@@ -11,7 +12,8 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'animes', component: AnimesComponent },
   { path: 'anime-detail/:id', component: AnimeDetailComponent },
-  { path: 'mangas', component: MangaListComponent }
+  { path: 'mangas', component: MangaListComponent },
+  { path: 'manga-detail/:id', component: MangaDetailComponent }
 
 ];
 
