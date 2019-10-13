@@ -1,1 +1,36 @@
-<p>manga-detail works!</p>
+<div *ngIf="manga">
+
+  <h1 *ngIf="manga.title">{{manga.title}}</h1>
+  <img *ngIf="manga.image_url" [src]="manga.image_url" alt="">
+
+  <p *ngIf="manga.title_english"><b>Título en inglés: </b>{{manga.title_english}}</p>
+  <p *ngIf="manga.title_japanese"><b>Título en japonés: </b>{{manga.title_japanese}}</p>
+  <p *ngIf="manga.title_synonyms"><b>Sinónimos del título: </b>
+    <span *ngFor="let synonym of manga.title_synonyms; let i = index">{{i === manga.title_synonyms.length - 1 ? synonym : synonym + ', '}}</span>
+  </p>
+  <p *ngIf="manga.volumes"><b>Volúmenes: </b>{{manga.volumes}}</p>
+  <p *ngIf="manga.chapters"><b>Capítulos: </b>{{manga.chapters}}</p>
+  <p *ngIf="manga.status"><b>Estado:</b> {{manga.status}}</p>
+  <div *ngIf="manga.published">
+    <b>Publicado:</b>
+    <p *ngIf="manga.published.from" [ngStyle]="{ 'margin-bottom': manga.published.to ? 0 : '1em' }"><b>Desde:</b> {{manga.published.from | date}}</p>
+    <p *ngIf="manga.published.to"><b>Hasta:</b> {{manga.published.to | date}}</p>
+  </div>
+  <p *ngIf="manga.score"><b>Puntuación:</b> {{manga.score}}</p>
+  <p *ngIf="manga.rank"><b>Rank:</b> {{manga.rank}}</p>
+  <p *ngIf="manga.popularity"><b>Popularidad:</b> {{manga.popularity}}</p>
+  <p *ngIf="manga.synopsis"><b>Sinopsis:</b> {{manga.synopsis}}</p>
+  <div *ngIf="manga.genres.length">
+    <p>
+      <b>Géneros: </b>
+      <span *ngFor="let genero of manga.genres; let i = index">
+        {{i === manga.genres.length - 1 ? genero.name : genero.name + ', '}}
+      </span>
+    </p>
+  </div>
+  <div *ngIf="manga.authors">
+    <b>Autores:</b>
+    <p *ngFor="let autor of manga.authors" style="margin-bottom: 0"><a [href]="autor.url" target="_blank">👉 {{autor.name}}</a></p>
+  </div>
+
+</div>

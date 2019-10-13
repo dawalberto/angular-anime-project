@@ -5,6 +5,11 @@
 
   <!-- <iframe width="560" height="315" [src]="anime.trailer_url" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
 
+  <p *ngIf="anime.title_english"><b>Título en inglés: </b>{{anime.title_english}}</p>
+  <p *ngIf="anime.title_japanese"><b>Título en japonés: </b>{{anime.title_japanese}}</p>
+  <p *ngIf="anime.title_synonyms"><b>Sinónimos del título: </b>
+    <span *ngFor="let synonym of anime.title_synonyms; let i = index">{{i === anime.title_synonyms.length - 1 ? synonym : synonym + ', '}}</span>
+  </p>
   <p *ngIf="anime.episodes"><b>Episodios:</b> {{anime.episodes}}</p>
   <p *ngIf="anime.status"><b>Estado:</b> {{anime.status}}</p>
   <p *ngIf="anime.duration"><b>Duración:</b> {{anime.duration}}</p>
@@ -20,9 +25,9 @@
   <p *ngIf="anime.studios.length"><b>Estudio:</b> {{anime.studios[0].name}}</p>
   <div *ngIf="anime.genres.length">
     <p>
-      <b>Generos: </b>
-      <span *ngFor="let genero of anime.genres">
-        {{genero.name}},
+      <b>Géneros: </b>
+      <span *ngFor="let genero of anime.genres; let i = index">
+        {{i === anime.genres.length - 1 ? genero.name : genero.name + ', '}}
       </span>
     </p>
   </div>
