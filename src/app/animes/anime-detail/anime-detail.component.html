@@ -1,20 +1,20 @@
 <div *ngIf="anime">
 
-  <h1>{{anime.title}}</h1>
-  <img [src]="anime.image_url" alt="">
+  <h1 *ngIf="anime.title">{{anime.title}}</h1>
+  <img *ngIf="anime.image_url" [src]="anime.image_url" alt="">
 
   <!-- <iframe width="560" height="315" [src]="anime.trailer_url" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
 
-  <p><b>Episodios:</b> {{anime.episodes}}</p>
-  <p><b>Estado:</b> {{anime.status}}</p>
-  <p><b>Duración:</b> {{anime.duration}}</p>
-  <p><b>Clasificación:</b> {{anime.rating}}</p>
-  <p><b>Puntuación:</b> {{anime.score}}</p>
-  <p><b>Rank:</b> {{anime.rank}}</p>
-  <p><b>Popularidad:</b> {{anime.popularity}}</p>
-  <p><b>Sinopsis:</b> {{anime.synopsis}}</p>
-  <p><b>Estrenado:</b> {{anime.premiered}}</p>
-  <p><b>Emisión:</b> {{anime.broadcast}}</p>
+  <p *ngIf="anime.episodes"><b>Episodios:</b> {{anime.episodes}}</p>
+  <p *ngIf="anime.status"><b>Estado:</b> {{anime.status}}</p>
+  <p *ngIf="anime.duration"><b>Duración:</b> {{anime.duration}}</p>
+  <p *ngIf="anime.rating"><b>Clasificación:</b> {{anime.rating}}</p>
+  <p *ngIf="anime.score"><b>Puntuación:</b> {{anime.score}}</p>
+  <p *ngIf="anime.rank"><b>Rank:</b> {{anime.rank}}</p>
+  <p *ngIf="anime.popularity"><b>Popularidad:</b> {{anime.popularity}}</p>
+  <p *ngIf="anime.synopsis"><b>Sinopsis:</b> {{anime.synopsis}}</p>
+  <p *ngIf="anime.premiered"><b>Estrenado:</b> {{anime.premiered}}</p>
+  <p *ngIf="anime.broadcast"><b>Emisión:</b> {{anime.broadcast}}</p>
   <p *ngIf="anime.producers.length"><b>Productores:</b> {{anime.producers[0].name}}</p>
   <p *ngIf="anime.licensors.length"><b>Licenciantes:</b> {{anime.licensors[0].name}}</p>
   <p *ngIf="anime.studios.length"><b>Estudio:</b> {{anime.studios[0].name}}</p>
@@ -28,6 +28,6 @@
   </div>
   <p *ngIf="anime.opening_themes.length"><b>Tema Opening:</b> {{anime.opening_themes[0]}}</p>
   <p *ngIf="anime.ending_themes.length"><b>Tema Ending:</b> {{anime.ending_themes[0]}}</p>
-  <a [href]="anime.trailer_url" target="_blank">Trailer</a>
+  <a *ngIf="anime.trailer_url" [href]="anime.trailer_url" target="_blank">Trailer</a>
 
 </div>
