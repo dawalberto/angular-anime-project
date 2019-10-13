@@ -1,14 +1,29 @@
 <nz-input-group nzSearch nzSize="large" [nzAddOnAfter]="suffixButton">
-  <input [(ngModel)]="name" type="text" nz-input placeholder="Dragon Ball" />
+  <input
+  [(ngModel)]="name"
+  (keyup.enter)="getMangasByName()"
+  type="text"
+  nz-input placeholder="One punch man" />
 </nz-input-group>
 <ng-template #suffixButton>
-  <button (click)="getMangasByName()" nz-button nzType="primary" nzSize="large" nzSearch>Search</button>
+  <button
+  (click)="getMangasByName()"
+  nz-button nzType="primary"
+  nzSize="large"
+  nzSearch
+  >
+    Search
+  </button>
 </ng-template>
 
 <div class="container" *ngIf="mangas.length">
   <div *ngFor="let manga of mangas">
 
-    <nz-card nzHoverable [title]="manga.title" routerLink="/manga-detail/{{manga.mal_id}}" [nzCover]="coverTemplate">
+    <nz-card
+    nzHoverable
+    [title]="manga.title"
+    routerLink="/manga-detail/{{manga.mal_id}}"
+    [nzCover]="coverTemplate">
       <nz-card-meta [nzTitle]="manga.title"></nz-card-meta>
     </nz-card>
     <ng-template #coverTemplate>

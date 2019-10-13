@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AnimesService } from '../../animes.service';
 import { Anime } from '../../interfaces/anime';
 import { Store } from '@ngrx/store';
-import { AppState } from 'src/app/interfaces/app-state';
+import { AppState } from 'src/app/app.reducers';
 import { LastSearchedAnime } from '../animes.actions';
 
 @Component({
@@ -16,7 +16,7 @@ export class AnimesComponent implements OnInit {
   constructor(private animesService:AnimesService, private store:Store<AppState>) { }
 
   ngOnInit() {
-    this.store.select('animes').subscribe(anime => {
+    this.store.select('lastSearchedAnime').subscribe(anime => {
       this.animes = anime
     })
   }

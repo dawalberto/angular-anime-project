@@ -22,6 +22,7 @@ import { HomeComponent } from './home/home.component';
 import { animeReducer } from './animes/animes.reducer';
 import { MangaListComponent } from './mangas/manga-list/manga-list.component';
 import { MangaDetailComponent } from './mangas/manga-detail/manga-detail.component';
+import { appReducers } from './app.reducers';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,7 @@ import { MangaDetailComponent } from './mangas/manga-detail/manga-detail.compone
     HttpClientModule,
     FormsModule,
     NgZorroAntdModule,
-    StoreModule.forRoot({ animes: animeReducer }),
+    StoreModule.forRoot(appReducers),
     StoreDevtoolsModule.instrument({
       maxAge: 25, // Retains last 25 states
       logOnly: environment.production // Restrict extension to log-only mode

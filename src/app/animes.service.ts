@@ -3,7 +3,7 @@ import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators'
 import { Anime } from './interfaces/anime';
-import { ResponseJikan } from './interfaces/response-jikan';
+import { ResponseJikan } from './interfaces/response-anime-jikan';
 import { AnimeDetail } from './interfaces/anime-detail';
 import { Manga } from './interfaces/manga';
 import { ResponseMangaJikan } from './interfaces/response-manga-jikan';
